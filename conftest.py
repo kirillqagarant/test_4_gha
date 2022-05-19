@@ -12,8 +12,10 @@ def set_headless(headless):
 
 @pytest.fixture
 def browser():
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=set_headless(True))
+#     driver = webdriver.Chrome(ChromeDriverManager().install(), options=set_headless(True))
+    driver = webdriver.Remote(command_executor='http://127.0.0.1:9222/wd/hub')
     driver.set_window_size(1920, 1080)
     driver.get("https://www.google.ru")
     yield driver.title
     driver.quit()
+    
