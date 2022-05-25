@@ -6,7 +6,10 @@ services:
 - name: chrome
   image: docker
   commands:
-  - ls -la /var/run/docker.sock
+  - sudo addgroup --system docker
+  - sudo adduser $USER docker
+  - newgrp docker
+  - reboot
   - docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:4.1.4-20220427
 
 steps:
