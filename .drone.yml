@@ -4,10 +4,8 @@ name: default
 
 services:
 - name: chrome
-  image: docker
+  image: alpine
   commands:
-  - addgroup --system docker
-  - reboot
   - docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:4.1.4-20220427
 
 steps:
