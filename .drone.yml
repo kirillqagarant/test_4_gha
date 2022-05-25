@@ -2,19 +2,9 @@ kind: pipeline
 type: docker
 name: default
 
-trigger:
-  event:
-  - push
-
-services:
-- name: chrome
-  image: browserless/chrome
-  commands:
-  - docker run -p 3000:3000 browserless/chrome
-
 steps:
 - name: test
   image: python
   commands:
   - pip install -r requirements.txt
-  - pytest
+  - python -V
