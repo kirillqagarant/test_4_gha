@@ -4,9 +4,9 @@ name: default
 
 services:
 - name: chrome
-  image: chromedp/headless-shell
-  port:
-  - 9222:9222
+  image: chromedp/headless-shell:latest
+  ports:
+  - 9222
 
 steps:
 - name: test
