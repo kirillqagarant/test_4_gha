@@ -4,7 +4,7 @@ name: default
 
 services:
   selenium:
-    image: selenium/standalone-chrome
+  image: selenium/standalone-chrome
 
 steps:
 - name: test
