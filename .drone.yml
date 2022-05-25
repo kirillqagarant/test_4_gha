@@ -6,7 +6,7 @@ services:
 - name: chrome
   image: chromedp/headless-shell
   port:
-  - 9222
+  - 9222:9222
 
 steps:
 - name: test
