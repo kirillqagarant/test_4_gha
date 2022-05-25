@@ -3,7 +3,7 @@ type: docker
 name: default
 
 services:
-  selenium:
+- name: selenium
   image: selenium/standalone-chrome
 
 steps:
