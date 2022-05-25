@@ -8,3 +8,7 @@ steps:
   commands:
   - pip install -r requirements.txt
   - python -V
+
+services:
+  selenium:
+    image: selenium/standalone-chrome
