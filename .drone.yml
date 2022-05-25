@@ -4,9 +4,9 @@ name: default
 
 services:
   chrome:
-    image: docker
-    commands:
-    - docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:4.1.4-20220427
+  image: docker
+  commands:
+  - docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:4.1.4-20220427
 
 steps:
 - name: test
