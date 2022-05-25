@@ -6,6 +6,8 @@ services:
 - name: chrome
   image: alpine
   commands:
+  - apk add --update docker openrc
+  - rc-update add docker boot
   - docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:4.1.4-20220427
 
 steps:
