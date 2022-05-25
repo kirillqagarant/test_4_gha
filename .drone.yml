@@ -2,13 +2,15 @@ kind: pipeline
 type: docker
 name: default
 
+services:
+- name: chrome
+  image: chromedp/headless-shell:latest
+  ports:
+  - 9222
+
 steps:
 - name: test
   image: python
   commands:
   - pip install -r requirements.txt
   - pytest
-
-services:
-  selenium:
-    image: selenium/standalone-chrome
