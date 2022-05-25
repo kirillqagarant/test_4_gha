@@ -4,9 +4,11 @@ name: default
 
 services:
 - name: chrome
-  image: chromedp/headless-shell:latest
-  ports:
-  - 9222
+  commands:
+  - docker pull chromedp/headless-shell:latest
+  - docker pull chromedp/headless-shell:74.0.3717.1
+  - docker run -d -p 9222:9222 --rm --name headless-shell chromedp/headless-shell
+  - docker run -d -p 9222:9222 --rm --name headless-shell --shm-size 2G chromedp/headless-shell
 
 steps:
 - name: test
