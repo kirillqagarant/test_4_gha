@@ -4,9 +4,10 @@ name: default
 
 services:
 - name: chrome
-  image: browserless/chrome:latest
-  ports:
-  - 3000
+  type: docker
+  commands:
+  - docker pull browserless/chrome
+  - docker run -p 3000:3000 browserless/chrome
 
 steps:
 - name: test
