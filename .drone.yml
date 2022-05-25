@@ -3,10 +3,15 @@ type: docker
 name: default
 
 services:
-- name: selenium
-  image: selenium/standalone-chrome
-  commands:
-  - docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:4.1.4-20220427
+  selenium:
+    image: selenium/hub
+
+  chrome:
+    image: selenium/node-chrome
+    environment:
+      HUB_PORT_4444_TCP_ADDR: selenium
+      HUB_PORT_4444_TCP_PORT: 4444
+      DISPLAY: ":99.0"
 
 steps:
 - name: test
