@@ -7,7 +7,6 @@ services:
   image: docker
   commands:
   - addgroup --system docker
-  - adduser $USER docker
   - newgrp docker
   - reboot
   - docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:4.1.4-20220427
