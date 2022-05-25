@@ -2,6 +2,10 @@ kind: pipeline
 type: docker
 name: default
 
+trigger:
+  event:
+  - push
+
 services:
 - name: chrome
   image: browserless/chrome
