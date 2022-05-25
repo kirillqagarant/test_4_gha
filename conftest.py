@@ -16,7 +16,7 @@ def set_headless(headless):
 def browser():
     sleep(10)
 #     driver = webdriver.Chrome(ChromeDriverManager().install(), options=set_headless(True))
-    driver = webdriver.Remote(command_executor="http://127.0.0.1:9222/wd/hub", desired_capabilities=DesiredCapabilities.CHROME)
+    driver = webdriver.Remote(command_executor="tcp://chrome:9222/wd/hub", desired_capabilities=DesiredCapabilities.CHROME)
     driver.set_window_size(1920, 1080)
     driver.get("https://www.google.ru")
     yield driver.title
