@@ -2,26 +2,6 @@ kind: pipeline
 type: docker
 name: default
 
-# services:
-# - name: chrome
-#   image: selenium/standalone-chrome:4.1.4-20220427
-
-# steps:
-# - name: test
-#   image: python
-#   commands:
-#   - pip install -r requirements.txt
-#   - pytest
-pipeline:
-  build:
-    image: python
-    commands:
-      - sleep 20
-      - python -m pip install --upgrade pip
-      - pip install -r requirements.txt
-      - python scripts.py
-#       - pytest
-
 services:
   selenium:
     image: selenium/hub
@@ -30,3 +10,12 @@ services:
     environment:
       HUB_PORT_4444_TCP_ADDR: selenium
       HUB_PORT_4444_TCP_PORT: "4444"
+
+pipeline:
+  build:
+    image: python
+    commands:
+      - sleep 20
+      - python -m pip install --upgrade pip
+      - pip install -r requirements.txt
+      - python scripts.py
