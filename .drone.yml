@@ -2,13 +2,23 @@ kind: pipeline
 type: docker
 name: default
 
-services:
-- name: chrome
-  image: selenium/standalone-chrome:4.1.4-20220427
+# services:
+# - name: chrome
+#   image: selenium/standalone-chrome:4.1.4-20220427
 
-steps:
-- name: test
-  image: python
-  commands:
-  - pip install -r requirements.txt
-  - pytest
+# steps:
+# - name: test
+#   image: python
+#   commands:
+#   - pip install -r requirements.txt
+#   - pytest
+pipeline:
+  build:
+    image: python
+    commands:
+      - pip install -r requirements.txt
+      - pytest
+
+services:
+  selenium:
+    image: selenium/standalone-chrome
