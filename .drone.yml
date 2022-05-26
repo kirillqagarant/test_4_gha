@@ -25,8 +25,8 @@ pipeline:
 services:
   selenium:
     image: selenium/hub
-  chrome:
-    image: selenium/node-chrome:2.48.2
-    environment:
-      HUB_PORT_4444_TCP_ADDR: selenium
-      HUB_PORT_4444_TCP_PORT: "4444"
+    chrome:
+      image: selenium/node-chrome:2.48.2
+      environment:
+        HUB_PORT_4444_TCP_ADDR: selenium
+        HUB_PORT_4444_TCP_PORT: "4444"
