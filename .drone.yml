@@ -3,22 +3,22 @@ type: docker
 name: default
 
 services:
-  - name: selenium
+  selenium:
     image: selenium/hub
 
-  - name: chrome
+  chrome:
     image: selenium/node-chrome
     environment:
       HUB_PORT_4444_TCP_ADDR: selenium
-      HUB_PORT_4444_TCP_PORT: "4444"
+      HUB_PORT_4444_TCP_PORT: 4444
       DISPLAY: ":99.0"
 
 
-steps:
-  name: test
-  image: python
-  commands:
-    - sleep 20
-    - python -m pip install --upgrade pip
-    - pip install -r requirements.txt
-    - python scripts.py
+pipeline:
+  build:
+    image: python
+    commands:
+      - sleep 20
+      - python -m pip install --upgrade pip
+      - pip install -r requirements.txt
+      - python scripts.py
