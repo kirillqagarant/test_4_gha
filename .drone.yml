@@ -18,7 +18,8 @@ pipeline:
     commands:
       - sleep 30
       - pip install -r requirements.txt
-      - pytest
+      - python scripts.py
+#       - pytest
 
 services:
   selenium:
