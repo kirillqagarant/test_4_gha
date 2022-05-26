@@ -32,4 +32,4 @@
 #     driver.quit()
 from requests import get
 
-print(get('http://chrome:4444/wd/hub').status_code)
+print(get('http://selenium').status_code)
