@@ -5,8 +5,6 @@ name: default
 services:
 - name: chrome
   image: selenium/standalone-chrome:4.1.4-20220427
-  port:
-  - 4444
 
 steps:
 - name: test
@@ -14,5 +12,3 @@ steps:
   commands:
   - pip install -r requirements.txt
   - pytest
-  port:
-  - 4444
