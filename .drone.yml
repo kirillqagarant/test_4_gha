@@ -24,7 +24,7 @@ pipeline:
 
 services:
   name: selenium
-    image: selenium/hub
+  image: selenium/hub
 
   chrome:
     image: selenium/node-chrome
