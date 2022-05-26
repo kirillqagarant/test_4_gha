@@ -7,15 +7,15 @@ services:
     image: selenium/hub
 
 
-pipeline:
-  chrome:
+steps:
+  name: chrome
   commands:
   - sleep 20
     image: selenium/node-chrome:2.48.2
     environment:
       HUB_PORT_4444_TCP_ADDR: selenium
       HUB_PORT_4444_TCP_PORT: "4444"
-  build:
+  name: test
     image: python
     commands:
       - sleep 20
