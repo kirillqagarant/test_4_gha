@@ -6,6 +6,8 @@ services:
   selenium:
     image: selenium/hub
   chrome:
+  commands:
+  - sleep 20
     image: selenium/node-chrome:2.48.2
     environment:
       HUB_PORT_4444_TCP_ADDR: selenium
