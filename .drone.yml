@@ -23,8 +23,8 @@ pipeline:
 #       - pytest
 
 services:
-  name: selenium
-  image: selenium/hub
+  selenium:
+    image: selenium/hub
 
   chrome:
     image: selenium/node-chrome
