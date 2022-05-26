@@ -29,7 +29,7 @@ services:
   chrome:
     image: selenium/node-chrome
     environment:
-      HUB_HOST: selenium
+      HUB_HOST: http://172.25.0.3:4444
       HUB_PORT_4444_TCP_ADDR: selenium
       HUB_PORT_4444_TCP_PORT: 4444
       DISPLAY: ":99.0"
