@@ -4,14 +4,14 @@ name: default
 
 services:
   - name: selenium
-      image: selenium/hub
+    image: selenium/hub
 
   - name: chrome
-      image: selenium/node-chrome
-      environment:
-        HUB_PORT_4444_TCP_ADDR: selenium
-        HUB_PORT_4444_TCP_PORT: "4444"
-        DISPLAY: ":99.0"
+    image: selenium/node-chrome
+    environment:
+      HUB_PORT_4444_TCP_ADDR: selenium
+      HUB_PORT_4444_TCP_PORT: "4444"
+      DISPLAY: ":99.0"
 
 
 steps:
