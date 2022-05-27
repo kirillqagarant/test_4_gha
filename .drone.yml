@@ -24,4 +24,4 @@ pipeline:
       - sleep 20
       - python -m pip install --upgrade pip
       - pip install -r requirements.txt
-      - python scripts.py
+      - pytest
