@@ -32,4 +32,4 @@
 #     driver.quit()
 from requests import get
 
-print(get('http://selenium').status_code)
+print(get('http://chrome:5555').status_code)
